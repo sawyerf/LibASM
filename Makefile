@@ -6,7 +6,11 @@ CFLAGS = -f elf64
 
 SRC_DIR = src
 
-SRC_FILE = ft_strlen.s
+SRC_FILE = 	ft_strlen.s \
+			ft_strcpy.s \
+			ft_strcmp.s \
+			ft_write.s \
+
 
 OBJ_DIR = .obj
 OBJ_FILE = $(SRC_FILE:.s=.o)
