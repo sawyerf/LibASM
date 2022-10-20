@@ -43,7 +43,7 @@ clean:
 	@printf "\033[0;31m[Libft] Deleted *.o\033[0;0m\n"
 
 fclean: clean
-	@/bin/rm -f $(NAME)
+	@/bin/rm -f $(NAME) test
 
 re: fclean all
 .PHONY: all clean fclean re

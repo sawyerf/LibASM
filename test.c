@@ -5,6 +5,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
+#include <errno.h>
 
 void testStrlen(char *str) {
 	size_t realSize = strlen(str);
@@ -35,6 +36,8 @@ void testStrdup(char *str) {
 
 	if (!cpy) {
 		write(1, "[Fail] strdup() - NULL\n", 23);
+		// char c = errno + '0';
+		// write(1, &c, 1);
 		return ;
 	}
 	if (strcmp(cpy, str)) {
@@ -90,11 +93,11 @@ int main() {
 	};
 	
 	for (int index = 0; index < 5; index++) {
-		// testWrite(tab[index]);
-		// testStrlen(tab[index]);
-		// testStrcpy(tab[index]);
-		// testStrcmp(tab[index]);
+		testWrite(tab[index]);
+		testStrlen(tab[index]);
+		testStrcpy(tab[index]);
+		testStrcmp(tab[index]);
 		testStrdup(tab[index]);
 	}
-	// testRead();
+	testRead();
 }
