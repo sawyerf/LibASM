@@ -10,6 +10,8 @@ SRC_FILE = 	ft_strlen.s \
 			ft_strcpy.s \
 			ft_strcmp.s \
 			ft_write.s \
+			ft_read.s \
+			ft_strdup.s \
 
 
 OBJ_DIR = .obj
@@ -33,7 +35,7 @@ $(NAME): $(OBJ)
 	@printf "\033[0;32m[Libft] Compilation [OK]\033[0;0m\n"
 	@ar rc $(NAME) $(OBJ)
 	@ranlib $(NAME)
-	@gcc -I inc test.c libasm.a -o test
+	@gcc -I inc test.c libasm.a -o test -no-pie
 
 clean:
 	@/bin/rm -f $(OBJ)
