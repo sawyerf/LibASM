@@ -11,9 +11,9 @@ void testStrlen(char *str) {
 	size_t realSize = strlen(str);
 	size_t ftSize   = ft_strlen(str);
 	if (realSize != ftSize) {
-		printf("[Fail] strlen(`%s'): %d - %d\n", str, realSize, ftSize);
+		printf("[Fail] strlen(`%s'): %ld - %ld\n", str, realSize, ftSize);
 	} else {
-		printf("[OK] strlen(`%s'): %d - %d\n", str, realSize, ftSize);
+		printf("[OK] strlen(`%s'): %ld - %ld\n", str, realSize, ftSize);
 	}
 }
 
@@ -64,9 +64,9 @@ void testWrite(char *str) {
 	int ret = ft_write(1, str, size);
 	write(1, "\n", 1);
 	if (size == ret) {
-		printf("[OK] write(`%s'): %d - %d\n", str, ret, size);
+		printf("[OK] write(`%s'): %d - %ld\n", str, ret, size);
 	} else {
-		printf("[Fail] write(`%s'): %d - %d\n", str, ret, size);
+		printf("[Fail] write(`%s'): %d - %ld\n", str, ret, size);
 	}
 }
 
